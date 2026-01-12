@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flight Booking System</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Small internal fix for overlay clarity -->
+  <style>
+    #seatSelection,
+    #userDetailsDiv {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE HEADING & NAV -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2 style="margin: 0;">Ready To Fly ✈️</h2>
+    <nav>
+      <button id="navSearchBtn"
+        style="margin:0; padding: 8px 15px; width: auto; font-size: 14px; background: transparent; border: 1px solid white;">Search
+        Flights</button>
+      <button id="navBookingsBtn"
+        style="margin:0; padding: 8px 15px; width: auto; font-size: 14px; background: rgba(255,255,255,0.2); border: 1px solid white;">My
+        Bookings</button>
+    </nav>
+  </div>
+
+  <!-- ================= MY BOOKINGS VIEW ================= -->
+  <div id="myBookingsView"
+    style="display: none; background: rgba(255,255,255,0.95); padding: 25px; border-radius: 12px; margin-top: 25px;">
+    <h3>My Trip History</h3>
+    <div id="bookingsList">
+      <p>Loading bookings...</p>
+    </div>
+  </div>
+
+  <!-- ================= FLIGHT SEARCH FORM ================= -->
+  <form id="flightForm">
+    <label for="origin">Origin:</label>
+    <select id="origin" required>
+      <option value="">Select Origin</option>
+      <option value="New York">New York</option>
+      <option value="Los Angeles">Los Angeles</option>
+      <option value="Chicago">Chicago</option>
+      <option value="Houston">Houston</option>
+      <option value="Phoenix">Phoenix</option>
+      <option value="Philadelphia">Philadelphia</option>
+      <option value="San Antonio">San Antonio</option>
+      <option value="San Diego">San Diego</option>
+      <option value="Dallas">Dallas</option>
+      <option value="San Jose">San Jose</option>
+      <option value="Miami">Miami</option>
+      <option value="Boston">Boston</option>
+      <option value="India">India</option>
+    </select>
+
+    <label for="destination">Destination:</label>
+    <select id="destination" required>
+      <option value="">Select Destination</option>
+      <option value="London">London</option>
+      <option value="Paris">Paris</option>
+      <option value="Tokyo">Tokyo</option>
+      <option value="Dubai">Dubai</option>
+      <option value="Berlin">Berlin</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Rome">Rome</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Hong Kong">Hong Kong</option>
+      <option value="Sydney">Sydney</option>
+      <option value="Toronto">Toronto</option>
+      <option value="Barcelona">Barcelona</option>
+    </select>
+
+    <label for="date">Date of Travel:</label>
+    <input type="date" id="date" required min="2026-01-01" max="2026-12-31" />
+
+    <button type="submit">Search Flights</button>
+  </form>
+
+  <!-- ================= RESULTS / CONFIRMATION ================= -->
+  <div id="results"></div>
+
+  <!-- ================= MAIN SCRIPT ================= -->
+  <script src="scripts.js"></script>
+
+</body>
+
+</html>

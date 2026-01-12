@@ -1,0 +1,230 @@
+/* General body setup with flight image background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Flight-themed background image */
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLjp_jgJ-D98LrsR1L3Y2AW8iYbMk5vS-NHA&s') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-clip: padding-box;
+}
+
+/* Heading styling */
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* Form styling with semi-transparent white background for readability */
+form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 22px rgba(102, 51, 255, 0.15);
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #444;
+  font-size: 16px;
+}
+
+/* Inputs and selects styling */
+input,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 8px;
+  border: 1.8px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 7px #8c70f7;
+}
+
+/* Button styling */
+button {
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+  background: #6a11cb;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5410a6;
+}
+
+/* Results container */
+#results {
+  margin-top: 25px;
+  background: #fefefe;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+/* Flight list styling */
+#results ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#results li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Book Now button inside flight list */
+#results button {
+  background: #2575fc;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  width: auto;
+}
+
+#results button:hover {
+  background: #1a58c0;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 500px) {
+  body {
+    max-width: 95%;
+    padding: 20px 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+/* ================= PREMIUM SEAT MAP STYLES ================= */
+
+/* Fuselage Container */
+.fuselage {
+  background-color: #f0f0f0;
+  border-radius: 40px 40px 0 0;
+  padding: 40px 20px 20px 20px;
+  border: 4px solid #dcdcdc;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Cabin Header (ABC | FRONT | DEF) */
+.cabin-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #888;
+  padding: 0 10px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Aisle Spacer */
+.aisle-spacer {
+  width: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  font-weight: bold;
+  line-height: 40px; /* Center text vertically */
+}
+
+/* Individual Seat Button */
+.seat-btn {
+  width: 45px;
+  height: 50px;
+  margin: 0 4px;
+  border-radius: 12px 12px 8px 8px; /* Rounded top like a headrest */
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 12px;
+  color: #555;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Armrest hints */
+.seat-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  height: 4px;
+  background: rgba(0,0,0,0.05); /* subtle shadow hint */
+  border-radius: 2px;
+}
+
+.seat-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(106, 17, 203, 0.2);
+  background-color: #f9f9ff;
+  border: 2px solid #6a11cb;
+}
+
+/* Selected Seat */
+.seat-selected {
+  background-color: #6a11cb !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.5) !important;
+  transform: scale(1.05);
+  border: none !important;
+}
+
+/* Booked Seat */
+.seat-booked {
+  background-color: #e0e0e0 !important;
+  color: #aaa !important;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* Remove default button margin from these specifically */
+.seat-btn {
+  margin-top: 0; 
+}
